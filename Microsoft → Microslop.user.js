@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Microsoft → Microslop
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/unstoppalezzz/Microsoft-to-Microslop-tampermonkey
 // @version      1.0
 // @description  Replace "Microsoft" with "Microslop"
 // @author       Unstoppalezzz
