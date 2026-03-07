@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Microsoft → Microslop
 // @namespace    https://github.com/unstoppalezzz/Microsoft-to-Microslop-tampermonkey
-// @version      1.0
+// @version      1.1
 // @description  Replace "Microsoft" with "Microslop"
 // @author       Unstoppalezzz
 // @match        *://*/*
@@ -19,20 +19,12 @@
         }
 
         else if (node.nodeType === Node.ELEMENT_NODE) {
-
-            for (const attr of node.attributes || []) {
-                if (attr.name === "href") continue;
-
-                if (/Microsoft/i.test(attr.value)) {
-                    attr.value = attr.value.replace(/Microsoft/gi, "Microslop");
-                }
-            }
-
             node.childNodes.forEach(replaceText);
         }
     }
 
     function start() {
+
         replaceText(document.body);
 
         const observer = new MutationObserver(mutations => {
@@ -50,4 +42,5 @@
     }
 
     window.addEventListener("DOMContentLoaded", start);
+
 })();
